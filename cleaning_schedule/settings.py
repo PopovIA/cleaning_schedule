@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cleaning_schedule',
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'cleaning_schedule.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cleaning',
+        'USER': 'djangoadm',
+        'PASSWORD': '19871115PiLL!',
+        'HOST': '45.136.245.37',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
