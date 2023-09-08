@@ -1,13 +1,11 @@
 import os
-
 from celery import Celery
 
 # Set the default Django settings module for the 'celery' program.
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cleaning_schedule.settings')
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'webinterface.settings')
-
-app = Celery('webinterface')
+app = Celery('cleaning_schedule')
 
 # Using a string here means the worker doesn't have to serialize
 # the configuration object to child processes.
